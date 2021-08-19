@@ -26,6 +26,23 @@ namespace Xadrez.tabuleiro
             QuantidadeMovimentos++;
         }
 
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovimentosPossiveis();
+
+            for (int i = 0; i < Tabuleiro.NumeroLinhas; i++)
+            {
+                for (int j = 0; j < Tabuleiro.NumeroColunas; j++)
+                {
+                    if (mat[i,j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public abstract bool[,] MovimentosPossiveis();
     }
 }
