@@ -26,6 +26,11 @@ namespace Xadrez.tabuleiro
             QuantidadeMovimentos++;
         }
 
+        public void DecrementarQtdMovimento()
+        {
+            QuantidadeMovimentos--;
+        }
+
         public bool ExisteMovimentosPossiveis()
         {
             bool[,] mat = MovimentosPossiveis();
@@ -43,7 +48,7 @@ namespace Xadrez.tabuleiro
             return false;
         }
 
-        public bool PodeMoverPara(Posicao pos)
+        public bool MovimentoPossivel(Posicao pos)
         {
             return MovimentosPossiveis()[pos.Linha, pos.Coluna];
         }
